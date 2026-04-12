@@ -10,7 +10,7 @@ import yfinance as yf
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app, origins="*")  # Frontend'den erişim için
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False) # Frontend'den erişim için
 
 BIST_TICKERS = {
     "THYAO": "THYAO.IS",
